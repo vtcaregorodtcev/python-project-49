@@ -4,7 +4,7 @@ import json
 
 from brain_games.common import game, is_corrupted
 
-with open('brain_games/db/brain_progression.json') as file:
+with open('./brain_games/db/brain_progression.json') as file:
     db = json.load(file)
 
 
