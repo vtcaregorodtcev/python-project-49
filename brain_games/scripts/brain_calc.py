@@ -13,7 +13,7 @@ def main():
         return
 
     game(db, 'What is the result of the expression?')
-    
+
 
 if __name__ == "__main__":
     main()

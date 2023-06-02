@@ -22,11 +22,11 @@ def is_corrupted(db):
     if len(db['questions']) < GAME_COUNT:
         print('Game is corrupted. Please fix the database.')
         return True
-    
+
     if len(db['questions']) != len(db['answers']):
         print('Game is corrupted. Please fix the database.')
         return True
-    
+
     return False
 
 

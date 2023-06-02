@@ -13,7 +13,7 @@ def main():
         return
 
     game(db, 'What number is missing in the progression?')
-    
+
 
 if __name__ == "__main__":
     main()

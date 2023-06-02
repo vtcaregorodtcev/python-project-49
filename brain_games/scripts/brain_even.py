@@ -13,7 +13,7 @@ def main():
         return
 
     game(db, 'Answer "yes" if the number is even, otherwise answer "no"')
-    
+
 
 if __name__ == "__main__":
     main()

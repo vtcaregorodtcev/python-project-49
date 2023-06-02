@@ -13,7 +13,7 @@ def main():
         return
 
     game(db, 'Find the greatest common divisor of given numbers.')
-    
+
 
 if __name__ == "__main__":
     main()
