@@ -1,0 +1,26 @@
+name: CodeClimate Coverage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  codeclimate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Run tests and collect coverage
+        run: make test
+
+      - name: Upload coverage to CodeClimate
+        uses: codeclimate/coverage-action@v1
+        with:
+          debug: false
+          token: ${{ secrets.CODECLIMATE_TOKEN }}
+          coverage_report: coverage.xml

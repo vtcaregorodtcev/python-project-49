@@ -33,4 +33,5 @@ lint:
 	poetry run flake8 tests
 
 test:
-	poetry run pytest .
+	poetry run coverage run -m pytest .
+	poetry run coverage xml -o coverage.xml

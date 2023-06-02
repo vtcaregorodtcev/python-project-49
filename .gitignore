@@ -34,3 +34,5 @@ ENV/
 # Other project-specific files and directories
 my_project_specific_file
 my_project_specific_directory/
+
+*coverage*
