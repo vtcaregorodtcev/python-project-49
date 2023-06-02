@@ -15,12 +15,9 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Run tests and collect coverage
-        run: make test
-
       - name: Upload coverage to CodeClimate
-        uses: codeclimate/coverage-action@v1
+        uses: paambaati/codeclimate-action@v2.2.4
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TOKEN }}
         with:
-          debug: false
-          token: ${{ secrets.CODECLIMATE_TOKEN }}
-          coverage_report: coverage.xml
+          coverageCommand: make test
