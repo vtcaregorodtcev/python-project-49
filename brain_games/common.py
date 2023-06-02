@@ -21,12 +21,18 @@ def get_indices_for_game(n):
 
 
 def is_corrupted(db):
+    err = 'Game is corrupted. Please fix the database.'
+
+    if 'questions' not in db or 'answers' not in db:
+        print(err)
+        return True
+
     if len(db['questions']) < GAME_COUNT:
-        print('Game is corrupted. Please fix the database.')
+        print(err)
         return True
 
     if len(db['questions']) != len(db['answers']):
-        print('Game is corrupted. Please fix the database.')
+        print(err)
         return True
 
     return False
