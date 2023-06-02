@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
 
-import json
-
-from brain_games.common import game, get_db_path, is_corrupted
-
-with open(get_db_path('brain_gcd.json')) as file:
-    db = json.load(file)
+from brain_games.common import game, get_db
 
 
 def main():
-    if is_corrupted(db):
-        return
-
+    db = get_db('brain_gcd.json')
     game(db, 'Find the greatest common divisor of given numbers.')
 
 

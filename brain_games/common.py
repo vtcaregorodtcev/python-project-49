@@ -1,3 +1,4 @@
+import json
 import random
 import os
 
@@ -59,3 +60,12 @@ def game(db, welcome_message):
 def get_db_path(db_name):
     root_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(root_dir, 'db', db_name)
+
+def get_db(db_name):
+    with open(get_db_path(db_name)) as file:
+        db = json.load(file)
+
+        if is_corrupted(db):
+            os._exit(1)
+
+        return db
