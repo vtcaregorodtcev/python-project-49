@@ -4,7 +4,7 @@ import json
 
 from brain_games.common import game, is_corrupted
 
-with open('brain_games/db/brain_even.json') as file:
+with open('brain_games/db/brain_calc.json') as file:
     db = json.load(file)
 
 
@@ -12,7 +12,7 @@ def main():
     if is_corrupted(db):
         return
 
-    game(db, 'Answer "yes" if the number is even, otherwise answer "no"')
+    game(db, 'What is the result of the expression?')
     
 
 if __name__ == "__main__":
