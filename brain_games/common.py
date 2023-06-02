@@ -67,6 +67,7 @@ def get_db_path(db_name):
     root_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(root_dir, 'db', db_name)
 
+
 def get_db(db_name):
     with open(get_db_path(db_name)) as file:
         db = json.load(file)
