@@ -1,5 +1,6 @@
 from brain_games.common import get_indices_for_game, is_corrupted
 
+
 def test_get_indices_for_game():
     n = 10
     indices = get_indices_for_game(n)
@@ -7,18 +8,19 @@ def test_get_indices_for_game():
     assert len(indices) == 3
     assert all(0 <= i < n for i in indices)
 
+
 def test_is_corrupted_true():
     db = {}
 
     is_corrupted_flag = is_corrupted(db)
-    assert is_corrupted_flag == True
+    assert is_corrupted_flag is True
 
     db = {
         "questions": []
     }
 
     is_corrupted_flag = is_corrupted(db)
-    assert is_corrupted_flag == True
+    assert is_corrupted_flag is True
 
     db = {
         "questions": [1, 2, 3],
@@ -26,7 +28,8 @@ def test_is_corrupted_true():
     }
 
     is_corrupted_flag = is_corrupted(db)
-    assert is_corrupted_flag == True
+    assert is_corrupted_flag is True
+
 
 def test_is_corrupted_false():
     db = {
@@ -35,4 +38,4 @@ def test_is_corrupted_false():
     }
 
     is_corrupted_flag = is_corrupted(db)
-    assert is_corrupted_flag == False
+    assert is_corrupted_flag is False
