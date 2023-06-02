@@ -9,7 +9,7 @@ def welcome_user():
 
 
 def game_round(question, correct_answer):
-    print('Question: ', question)
+    print('Question:', question)
     answer = prompt.string('Your answer: ')
 
     return answer, answer == correct_answer
