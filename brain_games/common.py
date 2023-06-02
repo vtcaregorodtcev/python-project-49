@@ -3,10 +3,13 @@ import random
 from brain_games.cli import game_round, welcome_user
 
 
+GAME_COUNT = 3
+
+
 def get_indices_for_game(n):
     indices = []
 
-    while len(indices) < 3:
+    while len(indices) < GAME_COUNT:
         random_num = random.randint(0, n - 1)
 
         if random_num not in indices:
@@ -16,6 +19,10 @@ def get_indices_for_game(n):
 
 
 def is_corrupted(db):
+    if len(db['questions']) < GAME_COUNT:
+        print('Game is corrupted. Please fix the database.')
+        return True
+    
     if len(db['questions']) != len(db['answers']):
         print('Game is corrupted. Please fix the database.')
         return True
