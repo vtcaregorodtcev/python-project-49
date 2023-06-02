@@ -2,9 +2,9 @@
 
 import json
 
-from brain_games.common import game, is_corrupted
+from brain_games.common import game, get_db_path, is_corrupted
 
-with open('./brain_games/db/brain_gcd.json') as file:
+with open(get_db_path('brain_gcd.json')) as file:
     db = json.load(file)
 
 

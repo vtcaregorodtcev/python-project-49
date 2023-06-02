@@ -1,4 +1,5 @@
 import random
+import os
 
 from brain_games.cli import game_round, welcome_user
 
@@ -53,3 +54,8 @@ def game(db, welcome_message):
             return
 
     print("Congratulations, {0}!".format(name))
+
+
+def get_db_path(db_name):
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(root_dir, 'db', db_name)
