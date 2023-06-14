@@ -5,6 +5,7 @@ from brain_games.common import GAME_COUNT, save_db
 
 DB_NAME = 'brain_calc.json'
 
+
 def generate_db():
     questions = []
     answers = []
@@ -24,5 +25,6 @@ def generate_db():
 
     db = {"questions": questions, "answers": answers}
     save_db(db, DB_NAME)
+
 
 generate_db()

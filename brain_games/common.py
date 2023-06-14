@@ -77,6 +77,7 @@ def get_db(db_name):
 
         return db
 
+
 def save_db(db, db_name):
     with open(get_db_path(db_name), 'w') as file:
         json.dump(db, file)
