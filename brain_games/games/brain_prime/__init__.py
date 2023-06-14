@@ -14,7 +14,7 @@ def generate_db():
         questions.append(str(number))
         answers.append("yes" if is_prime(number) else "no")
 
-    db =  {"questions": questions, "answers": answers}
+    db = {"questions": questions, "answers": answers}
     save_db(db, DB_NAME)
 
 
@@ -25,3 +25,6 @@ def is_prime(number):
         if number % i == 0:
             return False
     return True
+
+
+generate_db()

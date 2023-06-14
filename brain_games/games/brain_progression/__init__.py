@@ -9,7 +9,7 @@ DB_NAME = 'brain_progression.json'
 def generate_db():
     questions = []
     answers = []
-    for _ in range(GAME_COUNT): 
+    for _ in range(GAME_COUNT):
         progression = generate_progression()
         missing_index = random.randint(0, len(progression) - 1)
         missing_number = progression[missing_index]
