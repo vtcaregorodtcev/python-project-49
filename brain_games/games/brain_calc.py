@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
+
 import random
 
-from brain_games.common import GAME_COUNT, save_db
 
-
-DB_NAME = 'brain_calc.json'
+from brain_games.common import GAME_COUNT, game
 
 
 def generate_db():
@@ -23,8 +23,12 @@ def generate_db():
         questions.append(question)
         answers.append(answer)
 
-    db = {"questions": questions, "answers": answers}
-    save_db(db, DB_NAME)
+    return {"questions": questions, "answers": answers}
 
 
-generate_db()
+def main():
+    game(generate_db(), 'What is the result of the expression?')
+
+
+if __name__ == "__main__":
+    main()

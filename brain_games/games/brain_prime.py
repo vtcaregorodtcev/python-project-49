@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
+
 import random
 
-from brain_games.common import GAME_COUNT, save_db
 
-
-DB_NAME = 'brain_prime.json'
+from brain_games.common import GAME_COUNT, game
 
 
 def generate_db():
@@ -14,8 +14,7 @@ def generate_db():
         questions.append(str(number))
         answers.append("yes" if is_prime(number) else "no")
 
-    db = {"questions": questions, "answers": answers}
-    save_db(db, DB_NAME)
+    return {"questions": questions, "answers": answers}
 
 
 def is_prime(number):
@@ -27,4 +26,9 @@ def is_prime(number):
     return True
 
 
-generate_db()
+def main():
+    game(generate_db(), 'Answer "yes" if given number is prime. Otherwise answer "no".')
+
+
+if __name__ == "__main__":
+    main()

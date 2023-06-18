@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
+
 import random
 
-from brain_games.common import GAME_COUNT, save_db
 
-
-DB_NAME = 'brain_progression.json'
+from brain_games.common import GAME_COUNT, game
 
 
 def generate_db():
@@ -17,8 +17,7 @@ def generate_db():
         questions.append(' '.join(progression_with_gap))
         answers.append(str(missing_number))
 
-    db = {"questions": questions, "answers": answers}
-    save_db(db, DB_NAME)
+    return {"questions": questions, "answers": answers}
 
 
 def generate_progression():
@@ -38,4 +37,9 @@ def replace_with_gap(progression, index):
     return progression_with_gap
 
 
-generate_db()
+def main():
+    game(generate_db(), 'What number is missing in the progression?')
+
+
+if __name__ == "__main__":
+    main()

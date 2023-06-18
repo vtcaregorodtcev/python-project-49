@@ -1,10 +1,9 @@
+#!/usr/bin/env python3
+
 import random
 
 
-from brain_games.common import GAME_COUNT, save_db
-
-
-DB_NAME = 'brain_gcd.json'
+from brain_games.common import GAME_COUNT, game
 
 
 def generate_db():
@@ -16,8 +15,7 @@ def generate_db():
         questions.append(f"{num1} {num2}")
         answers.append(str(gcd(num1, num2)))
 
-    db = {"questions": questions, "answers": answers}
-    save_db(db, DB_NAME)
+    return {"questions": questions, "answers": answers}
 
 
 def gcd(a, b):
@@ -27,4 +25,9 @@ def gcd(a, b):
         return gcd(b, a % b)
 
 
-generate_db()
+def main():
+    game(generate_db(), 'Find the greatest common divisor of given numbers.')
+
+
+if __name__ == "__main__":
+    main()
