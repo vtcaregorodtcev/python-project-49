@@ -27,7 +27,8 @@ def is_prime(number):
 
 
 def main():
-    game(generate_db(), 'Answer "yes" if given number is prime. Otherwise answer "no".')
+    game(generate_db(),
+         'Answer "yes" if given number is prime. Otherwise answer "no".')
 
 
 if __name__ == "__main__":

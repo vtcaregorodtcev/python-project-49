@@ -18,7 +18,8 @@ def generate_db():
 
 
 def main():
-    game(generate_db(), 'Answer "yes" if the number is even, otherwise answer "no".')
+    game(generate_db(),
+         'Answer "yes" if the number is even, otherwise answer "no".')
 
 
 if __name__ == "__main__":

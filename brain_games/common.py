@@ -59,4 +59,3 @@ def game(db, welcome_message):
             return
 
     print("Congratulations, {0}!".format(name))
-
